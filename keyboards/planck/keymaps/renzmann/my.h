@@ -39,8 +39,6 @@ enum user_layers {
 enum user_keycodes {
   QWERTY = SAFE_RANGE,
   COLEMAK,
-  STCH_EX,
-  STN_EXIT,
   SEND_MAKE,
   SEND_VERSION,
   NEW_SAFE_RANGE
@@ -53,8 +51,8 @@ enum user_keycodes {
 #define GUI_L LT(GUI_LAYER, KC_LBRC)
 #define GUI_R LT(GUI_LAYER, KC_RBRC)
 
-#define HYPER_L ALL_T(KC_RBRC)
-#define HYPER_R ALL_T(KC_LBRC)
+#define HYPER_L C_S_T(KC_RBRC)
+#define HYPER_R C_S_T(KC_LBRC)
 
 #define CTL_ESC LCTL_T(KC_ESC)
 #define CTL_ENT RCTL_T(KC_ENT)
@@ -67,14 +65,16 @@ enum user_keycodes {
 
 #define GUI_GRV LGUI(KC_GRV)
 
+#define STCH_EX DF(QWERTY_LAYER)
+
 // Dashes (macOS)
 #define KC_NDSH LALT(KC_MINS)
 #define KC_MDSH S(LALT(KC_MINS))
 
 // Window manager keys
-#define WM_FULL LALT(LGUI(KC_F))
-#define WM_NEXT LCTL(LALT(LGUI(KC_RGHT)))
-#define WM_PREV LCTL(LALT(LGUI(KC_LEFT)))
+#define WM_FULL LGUI(KC_UP)
+#define WM_NEXT LALT(LSFT(KC_ESC))
+#define WM_PREV LALT(KC_ESC)
 #define WM_NW   LCTL(LGUI(KC_LEFT))
 #define WM_N    LALT(LGUI(KC_UP))
 #define WM_NE   LCTL(LGUI(KC_RGHT))
@@ -119,7 +119,7 @@ enum user_keycodes {
 #define _________________COLEMAK_L3________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 
 #define _________________COLEMAK_R1________________ KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN
-#define _________________COLEMAK_R2________________ KC_H,    KC_N,    KC_E,    KC_I,    KC_O
+#define _________________COLEMAK_R2________________ KC_H,    KC_N,    KC_E,    KC_I,    LT(NAV_LAYER, KC_O)
 #define _________________COLEMAK_R3________________ KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 #define _________________NUMBERS_L_________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
@@ -156,9 +156,9 @@ enum user_keycodes {
 #define __________________GUI_L2___________________ KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, XXXXXXX
 #define __________________GUI_L3___________________ KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, XXXXXXX
 
-#define __________________GUI_R1___________________ XXXXXXX, WM_PREV, WM_NW,   WM_N,    WM_NE
-#define __________________GUI_R2___________________ XXXXXXX, WM_FULL, WM_W,    WM_CNTR, WM_E
-#define __________________GUI_R3___________________ XXXXXXX, WM_NEXT, WM_SW,   WM_S,    WM_SE
+#define __________________GUI_R1___________________ XXXXXXX, XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX
+#define __________________GUI_R2___________________ XXXXXXX, DF(CAMEL_LAYER), DF(KEBAB_LAYER), DF(SNAKE_LAYER), XXXXXXX
+#define __________________GUI_R3___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #define __________VOLUME_________ KC_MUTE, KC_VOLD, KC_VOLU
 #define __________MEDIA__________ KC_MPRV, KC_MPLY, KC_MNXT

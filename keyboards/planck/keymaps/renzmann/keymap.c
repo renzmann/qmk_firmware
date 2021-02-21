@@ -1,5 +1,4 @@
-/* Copyright 2018 Noah Frederick
- *
+/* Copyright 2018  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
@@ -12,6 +11,10 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* This keymap is a modified fork of Noah Frederick's:
+ * https://github.com/noahfrederick/qmk-keymaps
  */
 
 #include QMK_KEYBOARD_H
@@ -42,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
    *                 │     │  Q  │  W  │  F  │  P  │  G  │  J  │  L  │  U  │  Y  │  ;  │     │
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │  A  │  R  │  S  │  T  │  D  │  H  │  N  │  E  │  I  │  O  │     │
+   *                 │     │  A  │  R  │  S  │  T  │  D  │  H  │  N  │  E  │  I  │O NAV│     │
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
    *                 │     │  Z  │  X  │  C  │  V  │  B  │  K  │  M  │  ,  │  .  │  /  │     │
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┴─────┼─────┼─────┼─────┼─────┼─────┤
@@ -163,7 +166,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, __________________NAV_L1___________________, __________________NAV_R1___________________, XXXXXXX,
     _______, __________________NAV_L2___________________, __________________NAV_R2___________________, _______,
     _______, __________________NAV_L3___________________, __________________NAV_R3___________________, _______,
-    _______, _______, _______, _______, XXXXXXX, XXXXXXX,          XXXXXXX, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, XXXXXXX, KC_LSFT,          XXXXXXX, _______, _______, _______, _______, _______
   ),
 
   /* GUI (window management/mouse/media controls) layer
@@ -193,18 +196,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
    *          RGB -- │Qwert│U Lnx│U OSX│Mode-│Mode+│Hue -│Hue +│Sat -│Sat +│     │Play1│Rec 1│ -- Record/play macro 1
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *        Audio -- │Colem│Voic-│Voic+│Mus +│Mus -│MIDI+│MIDI-│Aud +│Aud -│     │Play2│Rec 2│ -- Record/play macro 2
+   *        Audio -- │Colem│Voic-│Voic+│     │     │     │     │     │     │     │Play2│Rec 2│ -- Record/play macro 2
    *                 ├─────┼─────┼─────┼─────╆━━━━━╅─────┼─────╆━━━━━╅─────┼─────┼─────┼─────┤
-   *                 │Steno│     │Swap │Norm ┃     ┃  Toggle   ┃     ┃Toggl│Brig-│Brig+│Stop │ -- Stop recording macro
+   *                 │     │     │Swap │Norm ┃     ┃  Toggle   ┃     ┃Toggl│Brig-│Brig+│Stop │ -- Stop recording macro
    *                 └─────┴─────┴─────┴─────┺━━━━━┹─────┴─────┺━━━━━┹─────┴─────┴─────┴─────┘
    *                Swap GUI/Alt _/________/             \_____________\_ Backlight _/
    */
   [ADJUST_LAYER] = LAYOUT_planck_grid_wrapper(
     XXXXXXX, RESET,   SEND_MAKE, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SEND_VERSION,    XXXXXXX,
     QWERTY,  UC_M_LN, UC_M_OS,   RGB_RMOD, RGB_MOD, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, XXXXXXX, DYN_MACRO_PLAY1, DYN_REC_START1,
-    COLEMAK, MUV_DE,  MUV_IN,    MU_ON,    MU_OFF,  MI_ON,   MI_OFF,  AU_ON,   AU_OFF,  XXXXXXX, DYN_MACRO_PLAY2, DYN_REC_START2,
-    XXXXXXX, XXXXXXX, AG_SWAP,   AG_NORM,  LOWER,   LIT_TOG,          RAISE,   LIT_TOG, LIT_DEC, LIT_INC,         DYN_REC_STOP, _______
-
+    COLEMAK, XXXXXXX, XXXXXXX,   XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DYN_MACRO_PLAY2, DYN_REC_START2,
+    XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,  LOWER,   LIT_TOG,          RAISE,   LIT_TOG, LIT_DEC, LIT_INC,         DYN_REC_STOP, _______
   )
 };
 
