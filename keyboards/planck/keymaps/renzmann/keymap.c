@@ -173,14 +173,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *
    *         Mouse keys -----/```````````````````\               /```````````````````\----- Window manager
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-   *                 │     │Ms B2│Ms Up│Ms B1│Ms WD│     │     │Prev │ NW  │  N  │ NE  │     │
+   *                 │     │Ms B2│Ms Up│Ms B1│Ms WD│     │     │     │     │Caps │     │     │
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │Ms L │Ms Dn│Ms R │Ms WU│     │     │Full │  W  │Centr│  E  │     │
+   *                 │     │Ms L │Ms Dn│Ms R │Ms WU│     │     │Full │Camel│Kebab│Snake│     │
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │Undo │ Cut │Copy │Paste│     │     │Next │ SW  │  S  │ SE  │     │
-   *                 ┢━━━━━╅─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────╆━━━━━┪
-   *                 ┃     ┃Prev │Play │Next │Brig-│Sleep│Wake │Brig+│Mute │Vol- │Vol+ ┃     ┃
-   *                 ┗━━━━━┹─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┺━━━━━┛
+   *                 │     │Undo │ Cut │Copy │Paste│     │     │     │     │     │     │     │
+   *                 ┢━━━━━╅─────┼─────┼─────┼─────┼─────┴─────┼─────┼─────┼─────┼─────╆━━━━━┪
+   *                 ┃     ┃Prev │Play │Next │Brig-│   Sleep   │Brig+│Mute │Vol- │Vol+ ┃     ┃
+   *                 ┗━━━━━┹─────┴─────┴─────┴─────┴───────────┴─────┴─────┴─────┴─────┺━━━━━┛
    *                         \___ Media ___/   \___ Screen/sleep __/   \___ Volume __/
    */
   [GUI_LAYER] = LAYOUT_planck_grid_wrapper(
