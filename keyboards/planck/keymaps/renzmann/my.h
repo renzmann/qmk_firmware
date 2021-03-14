@@ -154,7 +154,7 @@ enum user_keycodes {
 
 #define __________________GUI_L1___________________ KC_BTN2, KC_MS_U, KC_BTN1, KC_WH_D, XXXXXXX
 #define __________________GUI_L2___________________ KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, XXXXXXX
-#define __________________GUI_L3___________________ LCTL(KC_Z), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), XXXXXXX
+#define __________________GUI_L3___________________ LCTL(KC_Z), LCTL(KC_X), LCTL(KC_INS), LSFT(KC_INS), XXXXXXX
 
 #define __________________GUI_R1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define __________________GUI_R2___________________ XXXXXXX, DF(CAMEL_LAYER), DF(KEBAB_LAYER), DF(SNAKE_LAYER), XXXXXXX
